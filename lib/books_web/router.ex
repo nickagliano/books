@@ -17,7 +17,22 @@ defmodule BooksWeb.Router do
   scope "/", BooksWeb do
     pipe_through :browser
 
+    # pages
     live "/", PageLive, :index
+    live "/pages", PageLive.Index, :index
+    live "/pages/new", PageLive.Index, :new
+    live "/pages/:id/edit", PageLive.Index, :edit
+    live "/pages/:id", PageLive.Show, :show
+    live "/pages/:id/show/edit", PageLive.Show, :edit
+
+    # passive abilities
+    live "/passive_abilities", PassiveAbilityLive.Index, :index
+    live "/passive_abilities/new", PassiveAbilityLive.Index, :new
+    live "/passive_abilities/:id/edit", PassiveAbilityLive.Index, :edit
+    live "/passive_abilities/:id", PassiveAbilityLive.Show, :show
+    live "/passive_abilities/:id/show/edit", PassiveAbilityLive.Show, :edit
+
+    
   end
 
   # Other scopes may use custom stacks.

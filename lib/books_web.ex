@@ -40,6 +40,7 @@ defmodule BooksWeb do
       
       # Import LiveView helpers
       import Phoenix.LiveView.Helpers
+      import BooksWeb.LiveHelpers
       
       # Include shared imports and aliases for views
       unquote(view_helpers())
@@ -87,6 +88,7 @@ defmodule BooksWeb do
 
       # Import LiveView helpers (live_render, live_component, live_patch, etc)
       import Phoenix.LiveView.Helpers
+      import BooksWeb.LiveHelpers
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View

@@ -1,0 +1,37 @@
+<h1>Listing Passive abilities</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, BooksWeb.PassiveAbilityLive.FormComponent,
+    id: @passive_ability.id || :new,
+    title: @page_title,
+    action: @live_action,
+    passive_ability: @passive_ability,
+    return_to: Routes.passive_ability_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="passive_abilities">
+    <%= for passive_ability <- @passive_abilities do %>
+      <tr id="passive_ability-<%= passive_ability.id %>">
+        <td><%= passive_ability.name %></td>
+        <td><%= passive_ability.description %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.passive_ability_show_path(@socket, :show, passive_ability) %></span>
+          <span><%= live_patch "Edit", to: Routes.passive_ability_index_path(@socket, :edit, passive_ability) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: passive_ability.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Passive ability", to: Routes.passive_ability_index_path(@socket, :new) %></span>
