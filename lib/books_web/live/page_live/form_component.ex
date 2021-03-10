@@ -1,4 +1,7 @@
 defmodule BooksWeb.PageLive.FormComponent do
+  @moduledoc """
+  Form components for Pages (not like web pages, but those which go in books!)
+  """
   use BooksWeb, :live_component
 
   alias Books.Pages

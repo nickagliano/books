@@ -1,4 +1,7 @@
 defmodule Books.PassiveAbilities.PassiveAbility do
+  @moduledoc """
+  passive ability model
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

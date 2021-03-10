@@ -1,4 +1,7 @@
 defmodule BooksWeb.LiveHelpers do
+  @moduledoc """
+  live helpers
+  """
   import Phoenix.LiveView.Helpers
 
   @doc """

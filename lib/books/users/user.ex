@@ -1,4 +1,7 @@
 defmodule Books.Users.User do
+  @moduledoc """
+  user model
+  """
   use Ecto.Schema
   use Pow.Ecto.Schema
 

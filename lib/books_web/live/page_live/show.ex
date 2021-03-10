@@ -1,4 +1,7 @@
 defmodule BooksWeb.PageLive.Show do
+  @moduledoc """
+  Show action for Pages (not like web pages, but those which go in books!)
+  """
   use BooksWeb, :live_view
 
   alias Books.Pages
