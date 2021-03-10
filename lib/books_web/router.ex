@@ -1,5 +1,7 @@
 defmodule BooksWeb.Router do
   use BooksWeb, :router
+  use Pow.Phoenix.Router # required by pow
+
   # test
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,11 +16,18 @@ defmodule BooksWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/" do
+    pipe_through :browser
+
+    # pow routes for user authentication
+    pow_routes()
+  end
+
   scope "/", BooksWeb do
     pipe_through :browser
 
     # pages
-    live "/", PageLive, :index
+    get "/", PublicController, :index
     live "/pages", PageLive.Index, :index
     live "/pages/new", PageLive.Index, :new
     live "/pages/:id/edit", PageLive.Index, :edit
@@ -32,7 +41,7 @@ defmodule BooksWeb.Router do
     live "/passive_abilities/:id", PassiveAbilityLive.Show, :show
     live "/passive_abilities/:id/show/edit", PassiveAbilityLive.Show, :edit
 
-    
+
   end
 
   # Other scopes may use custom stacks.
