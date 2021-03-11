@@ -17,8 +17,10 @@ defmodule BooksWeb.Router do
   scope "/", BooksWeb do
     pipe_through :browser
 
+    # public landing pages (home page, etc.)
+    get "/", PublicController, :index
+
     # pages
-    live "/", PageLive, :index
     live "/pages", PageLive.Index, :index
     live "/pages/new", PageLive.Index, :new
     live "/pages/:id/edit", PageLive.Index, :edit
@@ -32,7 +34,7 @@ defmodule BooksWeb.Router do
     live "/passive_abilities/:id", PassiveAbilityLive.Show, :show
     live "/passive_abilities/:id/show/edit", PassiveAbilityLive.Show, :edit
 
-    
+
   end
 
   # Other scopes may use custom stacks.

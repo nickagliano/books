@@ -1,4 +1,7 @@
 defmodule BooksWeb.Telemetry do
+  @moduledoc """
+  Telemetry module. TBH, not sure what this does yet. Metrics / testing things?
+  """
   use Supervisor
   import Telemetry.Metrics
 

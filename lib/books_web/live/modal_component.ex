@@ -1,4 +1,7 @@
 defmodule BooksWeb.ModalComponent do
+  @moduledoc """
+  modal component
+  """
   use BooksWeb, :live_component
 
   @impl true

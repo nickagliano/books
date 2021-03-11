@@ -1,4 +1,7 @@
 defmodule BooksWeb.PageLive do
+  @moduledoc """
+  Page live
+  """
   use BooksWeb, :live_view
 
   @impl true

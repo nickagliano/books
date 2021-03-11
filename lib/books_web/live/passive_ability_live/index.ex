@@ -1,4 +1,7 @@
 defmodule BooksWeb.PassiveAbilityLive.Index do
+  @moduledoc """
+  Index for PassiveAbilities
+  """
   use BooksWeb, :live_view
 
   alias Books.PassiveAbilities

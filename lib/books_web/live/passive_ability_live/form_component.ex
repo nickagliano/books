@@ -1,4 +1,7 @@
 defmodule BooksWeb.PassiveAbilityLive.FormComponent do
+  @moduledoc """
+  Form Component for PassiveAbilities
+  """
   use BooksWeb, :live_component
 
   alias Books.PassiveAbilities

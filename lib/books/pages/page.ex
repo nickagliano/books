@@ -1,4 +1,7 @@
 defmodule Books.Pages.Page do
+  @moduledoc """
+  page model
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

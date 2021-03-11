@@ -1,5 +1,8 @@
 defmodule BooksWeb.LiveHelpers do
   import Phoenix.LiveView.Helpers
+  @moduledoc """
+  live helpers
+  """
 
   @doc """
   Renders a component inside the `BooksWeb.ModalComponent` component.

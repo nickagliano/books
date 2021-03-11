@@ -1,4 +1,7 @@
 defmodule BooksWeb.PassiveAbilityLive.Show do
+  @moduledoc """
+  Show passive ability
+  """
   use BooksWeb, :live_view
 
   alias Books.PassiveAbilities
