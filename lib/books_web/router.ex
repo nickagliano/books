@@ -37,7 +37,7 @@ defmodule BooksWeb.Router do
     live "/passive_abilities/:id", PassiveAbilityLive.Show, :show
     live "/passive_abilities/:id/show/edit", PassiveAbilityLive.Show, :edit
 
-
+    resources "/chats", ChatController
   end
 
   # Other scopes may use custom stacks.

@@ -1,0 +1,25 @@
+#message-list {
+  border: 1px solid #777;
+  height: 400px;
+  padding: 10px;
+  overflow: scroll;
+  margin-bottom: 50px;
+}
+
+#message-composer {
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+    input {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+  }
+
+  #send-message-button {
+    // margin: 1em;
+  }
+}
+

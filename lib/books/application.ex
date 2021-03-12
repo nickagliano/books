@@ -14,7 +14,8 @@ defmodule Books.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Books.PubSub},
       # Start the Endpoint (http/https)
-      BooksWeb.Endpoint
+      BooksWeb.Endpoint,
+      BooksWeb.Presence
       # Start a worker by calling: Books.Worker.start_link(arg)
       # {Books.Worker, arg}
     ]
