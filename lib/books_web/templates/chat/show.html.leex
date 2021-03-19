@@ -4,7 +4,7 @@
       <div class="list-group-item active">
         <h2><%= @chat.room_name %></h2>
       </div>
-      <div class="list-group-item  messages">
+      <div id="messages-container" class="list-group-item messages">
         <ul>
           <%=for message <- @chat.messages do %>
           <p> <strong>
@@ -18,10 +18,9 @@
 
     <div class="form-group">
       <%= form_for @message, "#", [phx_change: :typing, phx_submit: :message], fn _f -> %>
-      <%= text_input :message, :content, value: @message.changes[:content], phx_blur: "stop_typing", placeholder: "write your message here..." %>
-      <%= hidden_input :message, :user_id, value: @current_user.id  %>
-      <%= hidden_input :message, :chat_id, value: @chat.id  %>
-      <%= submit "submit" %>
+        <%= text_input :message, :content, value: @message.changes[:content], phx_blur: "stop_typing", placeholder: "write your message here..." %>
+        <%= hidden_input :message, :user_id, value: @current_user.id  %>
+        <%= hidden_input :message, :chat_id, value: @chat.id  %>
       <% end %>
     </div>
   </div>
